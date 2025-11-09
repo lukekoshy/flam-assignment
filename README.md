@@ -16,8 +16,8 @@ A production-grade CLI-based background job queue system that manages jobs with 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/lukekoshy/queuectl.git
-cd queuectl
+git clone https://github.com/lukekoshy/flam-assignment.git
+cd flam-assignment
 ```
 
 2. Create and activate a virtual environment (optional but recommended):
