@@ -170,5 +170,5 @@ python queuectl.py dlq retry test2
 ```
 
 ## Recording
-[
-\[Link to demo video - Add your recording link here\]](https://drive.google.com/file/d/1bwl6uBL7HwsAc-iRgHRzcpPMDJA8ggjJ/view?usp=drive_link)
+
+[Demo Video](https://drive.google.com/file/d/1bwl6uBL7HwsAc-iRgHRzcpPMDJA8ggjJ/view?usp=drive_link)
