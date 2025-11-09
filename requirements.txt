@@ -1,0 +1,9 @@
+# Required Python packages for QueueCTL
+
+# None required - using only Python standard library:
+# - sqlite3 for database
+# - argparse for CLI
+# - json for data handling
+# - subprocess for job execution
+# - threading for worker management
+# - logging for output
