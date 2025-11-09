@@ -153,6 +153,14 @@ class CLI:
             print("-" * 40)
             for state, count in stats.items():
                 print(f"{state.capitalize():12} : {count}")
+            
+            # Show processing jobs with more detail
+            processing_jobs = self.db.list_jobs("processing")
+            if processing_jobs:
+                print("\nCurrently Processing Jobs:")
+                for job in processing_jobs:
+                    print(f"- Job {job['id']} (Worker: {job['worker_id']})")
+            
             print("-" * 40)
             
         except Exception as e:

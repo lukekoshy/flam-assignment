@@ -62,8 +62,13 @@ class Worker:
                 job["command"],
                 shell=True,
                 capture_output=True,
-                text=True
+                text=True,
+                encoding='utf-8'
             )
+            
+            logger.info(f"Job {job['id']} output: {process.stdout}")
+            if process.stderr:
+                logger.warning(f"Job {job['id']} stderr: {process.stderr}")
             
             if process.returncode == 0:
                 # Success
@@ -72,11 +77,14 @@ class Worker:
                     state="completed",
                     worker_id=None
                 )
+                logger.info(f"Job {job['id']} completed successfully")
             else:
                 # Command failed
+                error_msg = f"Command failed with exit code {process.returncode}: {process.stderr}"
+                logger.error(f"Job {job['id']} failed: {error_msg}")
                 self._handle_failure(
                     job,
-                    f"Command failed with exit code {process.returncode}: {process.stderr}"
+                    error_msg
                 )
                 
         except Exception as e:
